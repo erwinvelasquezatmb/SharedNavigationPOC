@@ -1,0 +1,45 @@
+﻿@using Anytime.Mailbox.Renter.Portal.Extensions
+@using Anytime.Mailbox.Renter.Portal.Setup
+@using System.Globalization
+@using Anytime.Mailbox.Renter.Portal.ViewModels
+
+@model HomeIndexViewModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>RENTER Portal</h1>
+
+<p></p>
+<p></p>
+
+@inject HostingHelpers _hostingHelpers;
+@{
+	var identityName = User.FindFirst("Name")?.Value ?? string.Empty;
+	var names = (identityName ?? string.Empty)
+				.Split(' ', StringSplitOptions.RemoveEmptyEntries)
+				.Take(2)
+				.ToArray();
+	var email = User.Identity?.Name ?? string.Empty;
+	var firstname = (names.ElementAtOrDefault(0) ?? string.Empty).CapitalizeFirstLetterOnly();
+	var lastname = (names.ElementAtOrDefault(1) ?? string.Empty).CapitalizeFirstLetterOnly();
+	var initials = string.Concat(names
+		.Select(p => !string.IsNullOrEmpty(p) ? char.ToUpper(p[0]).ToString() : string.Empty)
+	);
+
+	var entra_sign_out_label = "Logout";
+}
+
+@if (User.Identity.Name is not null)
+{
+	<p>Name: @firstname @lastname</p>
+	<p>Email: @email</p>
+}
+
+
+@* @if (User.Identity.Name is null)
+{
+	<a asp-controller="Account" asp-action="Signin" asp-area="MicrosoftIdentity" asp-route-returnUrl="@Context.Request.Path">@Model.EntraSigninLabel</a>
+}
+ *@

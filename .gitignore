@@ -5,3 +5,7 @@
 /.vs
 /Anytime.Mailbox.Shared.Navigation/bin
 /Anytime.Mailbox.Shared.Navigation/obj
+/Anytime.Mailbox.Renter.Portal/bin
+/Anytime.Mailbox.Renter.Portal/node_modules
+/Anytime.Mailbox.Renter.Portal/obj
+/Anytime.Mailbox.Renter.Portal/wwwroot/assets/bundles

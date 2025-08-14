@@ -1,0 +1,60 @@
+﻿header div.header-container {
+    height: 72px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #D9DFE6;
+}
+
+    header div.header-container > div > div.logo-container {
+        /*border-right: 1px solid black;*/
+        padding-right: 12px;
+    }
+
+    header div.header-container > div > div.logo-container,
+    header div.header-container > div > div.logo-container > img {
+        height: 100%;
+        width: auto;
+    }
+
+    header div.header-container > div:last-child {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+.bugo-copyright {
+    width: 100%;
+    background-color: #F5F7F9;
+    padding-bottom: 24px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    font-family: 'Roboto';
+    color: #565656;
+}
+
+.login.bugo-copyright {
+    padding-bottom: 0 !important;
+}
+
+/* KungFui specific classes */
+/* these specific classes needs to be overwritten locally */
+header div.header-container .k-input,
+header div.header-container .kf-textbox .k-input.k-textbox.k-input-inner.k-input-solid.k-input-md.k-rounded-md {
+    height: 40px !important;
+}
+
+header div.header-container .kf-avatar.kf-avatar-medium {
+    height: 40px !important;
+    width: 40px !important;
+    flex-basis: unset !important;
+}
+
+.kf-content {
+    background-color: #F5F7F9 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
