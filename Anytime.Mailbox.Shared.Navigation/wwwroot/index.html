@@ -1,9 +1,72 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html lang="en">
 <head>
-    <title>Navigation Test</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <title>Anytime Mailbox Header</title>
 </head>
 <body>
-    Test
+    <div id="nav_placeholder"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/navigation.js"></script>
+
+    <script>
+        const model = {
+            logo: {
+                src: "/images/logo.png",
+                href: "/",
+                text: "Anytime Mailbox"
+            },
+            dropdownItems: [
+                { href: "/", text: "Mailbox 1" },
+                { href: "/", text: "Mailbox 2" },
+                { href: "/", text: "Mailbox 3" }
+            ],
+            notifications: {
+                count: 2,
+                list: [
+                    "New Mail Received",
+                    "System maintenance tomorrow"
+                ]
+            },
+            applications: {
+                buttonText: "My Account",
+                list: [
+                    { href: "/", src: "images/logo-atmb-mailbox.png", text: "Anytime Mailbox" },
+                    { href: "/", src: "images/logo-atmb-phones.png", text: "Anytime Phone" },
+                    { href: "/", src: "images/logo-atmb-bacc.png", text: "Business Accelerator" }
+                ]
+            },
+            profile: {
+                userInitial: "AO",
+                menuItems: [
+                    { href: "/", text: "My Profile" },
+                    { href: "/", text: "Settings" },
+                    { href: "/", text: "Logout" }
+                ]
+            }
+
+        }
+
+        loadNavigationBar('#nav_placeholder', model);
+
+    </script>
 </body>
 </html>
