@@ -1,0 +1,96 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="text-center">
+	<h3 class="display-4">Call History</h3>
+</div>
+
+<table>
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Contact</th>
+			<th>Duration</th>
+			<th>Type</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>2025-08-13</td>
+			<td>09:15 AM</td>
+			<td>Jane Smith</td>
+			<td>5 min</td>
+			<td class="incoming">Incoming</td>
+		</tr>
+		<tr>
+			<td>2025-08-12</td>
+			<td>08:45 PM</td>
+			<td>John Doe</td>
+			<td>2 min</td>
+			<td class="outgoing">Outgoing</td>
+		</tr>
+		<tr>
+			<td>2025-08-11</td>
+			<td>07:00 PM</td>
+			<td>Michael Johnson</td>
+			<td>Missed</td>
+			<td class="missed">Missed</td>
+		</tr>
+		<tr>
+			<td>2025-08-11</td>
+			<td>01:30 PM</td>
+			<td>Emily Davis</td>
+			<td>10 min</td>
+			<td class="incoming">Incoming</td>
+		</tr>
+	</tbody>
+</table>
+
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		margin: 40px;
+		background-color: #f9f9f9;
+	}
+
+	h1 {
+		color: #333;
+	}
+
+	table {
+		width: 80%;
+		border-collapse: collapse;
+		margin-top: 20px;
+	}
+
+	th, td {
+		padding: 12px;
+		text-align: left;
+		border-bottom: 1px solid #ccc;
+	}
+
+	th {
+		background-color: #28a745;
+		color: white;
+	}
+
+	tr:hover {
+		background-color: #f1f1f1;
+	}
+
+	.missed {
+		color: red;
+	}
+
+	.incoming {
+		color: green;
+	}
+
+	.outgoing {
+		color: blue;
+	}
+</style>

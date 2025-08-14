@@ -28,5 +28,20 @@ namespace Anytime.Phone.Controllers
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
+
+		public IActionResult PhoneNumbers()
+		{
+			return View();
+		}
+
+		public IActionResult CallHistory()
+		{
+			return View();
+		}
+
+		public IActionResult MakeACall()
+		{
+			return View();
+		}
 	}
 }
