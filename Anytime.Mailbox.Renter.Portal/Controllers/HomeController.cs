@@ -27,5 +27,15 @@ namespace Anytime.Mailbox.Renter.Portal.Controllers
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
+
+		public async Task<IActionResult> Inbox()
+		{
+			return View();
+		}
+
+		public async Task<IActionResult> Archive()
+		{
+			return View();
+		}
 	}
 }
