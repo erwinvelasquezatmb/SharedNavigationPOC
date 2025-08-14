@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anytime.Mailbox.Shared.Navi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anytime.Mailbox.Renter.Portal", "Anytime.Mailbox.Renter.Portal\Anytime.Mailbox.Renter.Portal.csproj", "{28EDBB76-CF0E-4D9C-A6C4-518B8C33D00F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anytime.Phone", "Anytime.Phone\Anytime.Phone.csproj", "{A2E5B424-991A-4366-8448-D63F23BC30D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{28EDBB76-CF0E-4D9C-A6C4-518B8C33D00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28EDBB76-CF0E-4D9C-A6C4-518B8C33D00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28EDBB76-CF0E-4D9C-A6C4-518B8C33D00F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E5B424-991A-4366-8448-D63F23BC30D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E5B424-991A-4366-8448-D63F23BC30D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E5B424-991A-4366-8448-D63F23BC30D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E5B424-991A-4366-8448-D63F23BC30D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
