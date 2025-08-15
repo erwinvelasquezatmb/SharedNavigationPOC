@@ -102,7 +102,7 @@
 /* Sidebar */
 .sidebar-container {
     position: relative;
-    top: 0;
+    top: 15px;
 }
 
 .sidebar {
