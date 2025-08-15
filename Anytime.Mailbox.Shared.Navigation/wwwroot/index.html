@@ -16,10 +16,10 @@
     <title>Anytime Mailbox Header</title>
 </head>
 <body>
-    <div id="nav_placeholder"></div>
+    <header id="nav_placeholder"></header>
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -39,13 +39,13 @@
                 { href: "/", text: "Mailbox 2" },
                 { href: "/", text: "Mailbox 3" }
             ],
-            notifications: {
-                count: 2,
-                list: [
-                    "New Mail Received",
-                    "System maintenance tomorrow"
-                ]
-            },
+            //notifications: {
+            //    count: 2,
+            //    list: [
+            //        "New Mail Received",
+            //        "System maintenance tomorrow"
+            //    ]
+            //},
             applications: {
                 buttonText: "My Account",
                 list: [
@@ -61,11 +61,67 @@
                     { href: "/", text: "Settings" },
                     { href: "/", text: "Logout" }
                 ]
-            }
+            },
+            menuItems: [
+                {
+                    href: "/",
+                    text: "Inbox",
+                    iconClass: "bi bi-envelope"
+                },
+                {
+                    href: "/",
+                    text: "Archive",
+                    iconClass: "bi bi-archive"
 
+                },
+                {
+                    href: "/",
+                    text: "Phone",
+                    iconClass: "bi bi-gear",
+                    subMenuItems: [
+                        { href: "/", text: "Inbox" },
+                        { href: "/", text: "Sent" },
+
+                    ]
+
+                },
+                {
+                    href: "/",
+                    text: "Settings",
+                    iconClass: "bi bi-question-circle",
+                    subMenuItems: [
+                        { href: "/", text: "General" },
+                        { href: "/", text: "Security" },
+                        { href: "/", text: "Management" }
+
+                    ]
+
+                }
+
+
+            ]
         }
 
         loadNavigationBar('#nav_placeholder', model);
+
+        //document.querySelectorAll('.sidebar .nav-item').forEach(item => {
+        //    item.addEventListener('click', function () {
+        //        const menuName = this.getAttribute('data-menu');
+
+        //        document.querySelector('.submenu-panel').classList.add('open');
+
+        //        document.querySelectorAll('.submenu').forEach(sm => sm.classList.remove('active'));
+
+        //        document.querySelector(`#menu-${menuName}`).classList.add('active');
+        //    });
+        //});
+
+        //document.addEventListener('click', function (e) {
+        //    if (!e.target.closest('.sidebar') && !e.target.closest('.submenu-panel')) {
+        //        document.querySelector('.submenu-panel').classList.remove('open');
+        //        document.querySelectorAll('.submenu').forEach(sm => sm.classList.remove('active'));
+        //    }
+        //});
 
     </script>
 </body>
