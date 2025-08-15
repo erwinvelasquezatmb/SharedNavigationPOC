@@ -97,7 +97,7 @@
 /* Sidebar */
 .sidebar-container {
     position: relative;
-    top: 15px;
+    top: 0;
 }
 
 .sidebar {
