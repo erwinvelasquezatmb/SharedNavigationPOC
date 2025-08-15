@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Anytime.Mailbox.Shared.Navigation\\Anytime.Mailbox.Shared.Navigation.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Anytime.Mailbox.Renter.Portal\\Anytime.Mailbox.Renter.Portal.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Anytime.Phone\\Anytime.Phone.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

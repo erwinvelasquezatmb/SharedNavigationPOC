@@ -2,6 +2,10 @@
 /*        HEADER         */
 /* ===================== */
 
+.hidden {
+    display: none !important;
+}
+
 .navbar i::before {
     color: #000;
 }
