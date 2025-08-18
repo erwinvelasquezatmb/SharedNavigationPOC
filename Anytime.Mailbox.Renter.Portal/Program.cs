@@ -36,28 +36,41 @@ var settings = config.GetSection(nameof(AppSettings)).Get<AppSettings>();
 
 builder.Services.AddLocalization();
 
-// ALWAYS, defaults all endpoints to have AUTHORIZE, explicit set to ALLOWANONYMOUS
-builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-	.AddMicrosoftIdentityWebApp(builder.Configuration);
-
-builder.Services.AddControllersWithViews(options =>
-{
-	var policy = new AuthorizationPolicyBuilder()
-		.RequireAuthenticatedUser()
-		.Build();
-	options.Filters.Add(new AuthorizeFilter(policy));
-}).AddMicrosoftIdentityUI();
-
-builder.Services.AddRazorPages()
-	.AddMvcOptions(options =>
+builder.Services.AddControllersWithViews()
+	.AddJsonOptions(options =>
 	{
-		var policy = new AuthorizationPolicyBuilder()
-			.RequireAuthenticatedUser()
-			.Build();
-		options.Filters.Add(new AuthorizeFilter(policy));
-	})
-	.AddMicrosoftIdentityUI();
-// --
+		options.JsonSerializerOptions.DefaultIgnoreCondition =
+			System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+	});
+
+//// ALWAYS, defaults all endpoints to have AUTHORIZE, explicit set to ALLOWANONYMOUS
+//builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+//	.AddMicrosoftIdentityWebApp(builder.Configuration);
+
+//builder.Services.AddControllersWithViews(options =>
+//{
+//	var policy = new AuthorizationPolicyBuilder()
+//		.RequireAuthenticatedUser()
+//		.Build();
+//	options.Filters.Add(new AuthorizeFilter(policy));
+//})
+//	.AddJsonOptions(options =>
+//	{
+//		options.JsonSerializerOptions.DefaultIgnoreCondition =
+//			System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+//	})
+//	.AddMicrosoftIdentityUI();
+
+//builder.Services.AddRazorPages()
+//	.AddMvcOptions(options =>
+//	{
+//		var policy = new AuthorizationPolicyBuilder()
+//			.RequireAuthenticatedUser()
+//			.Build();
+//		options.Filters.Add(new AuthorizeFilter(policy));
+//	})
+//	.AddMicrosoftIdentityUI();
+//// --
 
 
 builder.Services.Configure<CookieAuthenticationOptions>(
