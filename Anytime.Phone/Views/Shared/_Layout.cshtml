@@ -34,7 +34,7 @@
     <!--  -->
 </head>
 <body>
-    <header id="nav_placeholder">
+    <header>
     </header>
 
     <div class="container">
@@ -105,8 +105,7 @@
             ]
         }
 
-        //loadNavigationBar('#nav_placeholder', model);
-        RenderNavigation(model,'nav_placeholder');
+        RenderNavigation(model);
     </script>
 
     @await RenderSectionAsync("Scripts", required: false)

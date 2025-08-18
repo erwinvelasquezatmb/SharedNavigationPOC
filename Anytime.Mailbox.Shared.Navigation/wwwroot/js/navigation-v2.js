@@ -97,7 +97,7 @@ var htmlTemplate = `
                                             <div class="d-flex justify-content-around">
                                                 {{APP_ITEMS}}
                                             </div>
-                                            <button class="my-account-btn mt-2">My Account</button>
+                                            <button class="my-account-btn mt-2" onclick="location.href='https://localhost:7032/';">My Account</button>
                                         </div>
                                     </div>
 
@@ -135,17 +135,22 @@ var htmlTemplate = `
 // This is the default model
 var defaultModel = {
     logo: {
-        src: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo.png",
+        src: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo_AC_transparent.png",
         href: "/",
         text: "Anytime Renter Portal"
     }
 }
 
+// This is the default target
+var defaultTarget = $("body header").first();
 
+
+// Use this to intialize and render the common navigation components
 function RenderNavigation(model, target) {
+
     // FIND THE TARGET CONTAINER
     // set header element as the default container 
-    var targetContainer = $("body header").first();
+    var targetContainer = defaultTarget;
 
     // override container if target is provided
     if (target && $.trim(target) !== "") {
@@ -167,8 +172,8 @@ function RenderNavigation(model, target) {
         model = defaultModel;
     }
 
-    // LET'S REPLACE THE TEMPLATE VARIABLE
-    var finaHeaderHtml = ReplaceVariables(model, htmlTemplate);
+    // REPLACE THE TEMPLATE VARIABLES
+    var finaHeaderHtml = ReplaceTemplateVariables(model, htmlTemplate);
     
 
     // INSERT THE FINAL HTML TO THE TARGET CONTAINER
@@ -176,7 +181,9 @@ function RenderNavigation(model, target) {
 }
 
 
-function ReplaceVariables(model, template) {
+// Logic for replacing the variable on the template with content from the model
+function ReplaceTemplateVariables(model, template) {
+
     // {{LOGO}}
     if (model.logo) {
         var logoHref = model.logo.href || '#';
@@ -191,6 +198,7 @@ function ReplaceVariables(model, template) {
 
         template = template.replaceAll("{{LOGO}}", modelLogo);
     }
+
 
     // {{SIDEBAR_VISIBILITY}} by default sidebar is hidden
     var sidebarVisibility = "hidden";
