@@ -23,8 +23,8 @@
 
 	public class AppDrawer
 	{
-		public ListItem? Button { get; set; }
-		public List<ListItem>? ListItems { get; set; }
+		public ListItem? ActionButton { get; set; }
+		public List<ListItem>? AppItems { get; set; }
 	}
 
 	public class Profile
@@ -32,7 +32,7 @@
 		public string FirstName { get; set; } = string.Empty;
 		public string LastName { get; set; } = string.Empty;
 		public string Email { get; set; } = string.Empty;
-		public List<ListItem>? ListItems { get; set; }
+		public List<ListItem>? ActionLinks { get; set; }
 	}
 
 	public class ListItem
@@ -43,6 +43,6 @@
 		public string? IconClass { get; set; }
 		public string? ToolTip { get; set; }
 		public bool? Selected { get; set; }
-		public List<ListItem>? ListItems { get; set; }
+		public List<ListItem>? SubMenuItems { get; set; }
 	}
 }

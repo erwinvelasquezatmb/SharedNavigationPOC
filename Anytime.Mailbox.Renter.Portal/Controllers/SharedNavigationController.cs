@@ -46,13 +46,13 @@ namespace Anytime.Mailbox.Renter.Portal.Controllers
 					},
 					AppDrawer = new AppDrawer()
 					{
-						Button = new ListItem()
+						ActionButton = new ListItem()
 						{
 							TargetUri = "/",
 							Label = "My Account",
 							ToolTip = "Button tooltip"
 						},
-						ListItems = new List<ListItem>()
+						AppItems = new List<ListItem>()
 						{
 							new ListItem()
 							{
@@ -75,7 +75,7 @@ namespace Anytime.Mailbox.Renter.Portal.Controllers
 						FirstName = "John",
 						LastName = "Doe",
 						Email = "john.doe@somewhere.com",
-						ListItems = new List<ListItem>()
+						ActionLinks = new List<ListItem>()
 						{
 
 							new ListItem()
@@ -124,7 +124,7 @@ namespace Anytime.Mailbox.Renter.Portal.Controllers
 						IconClass = "bi bi-gear",
 						Selected = false,
 						ToolTip = "Settings tooltip",
-						ListItems = new List<ListItem>()
+						SubMenuItems = new List<ListItem>()
 						{
 							new ListItem()
 							{
@@ -156,7 +156,7 @@ namespace Anytime.Mailbox.Renter.Portal.Controllers
 						IconClass = "bi bi-question-circle",
 						Selected = false,
 						ToolTip = "Help tooltip",
-						ListItems = new List<ListItem>()
+						SubMenuItems = new List<ListItem>()
 						{
 							new ListItem()
 							{

@@ -24,12 +24,12 @@ namespace Anytime.Central.Controllers
 					},
 					AppDrawer = new AppDrawer()
 					{
-						Button = new ListItem()
+						ActionButton = new ListItem()
 						{
 							TargetUri = "/",
 							Label = "My Account"
 						},
-						ListItems = new List<ListItem>()
+						AppItems = new List<ListItem>()
 						{
 							new ListItem()
 							{
@@ -52,7 +52,7 @@ namespace Anytime.Central.Controllers
 						FirstName = "John",
 						LastName = "Doe",
 						Email = "john.doe@somewhere.com",
-						ListItems = new List<ListItem>()
+						ActionLinks = new List<ListItem>()
 						{
 
 							new ListItem()

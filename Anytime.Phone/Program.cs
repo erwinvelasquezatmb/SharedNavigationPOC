@@ -7,35 +7,41 @@ using Microsoft.Identity.Web.UI;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews()
+//builder.Services.AddControllersWithViews()
+//	.AddJsonOptions(options =>
+//	{
+//		options.JsonSerializerOptions.DefaultIgnoreCondition =
+//			System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+//	});
+
+// ALWAYS, defaults all endpoints to have AUTHORIZE, explicit set to ALLOWANONYMOUS
+builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+	.AddMicrosoftIdentityWebApp(builder.Configuration);
+
+builder.Services.AddControllersWithViews(options =>
+{
+	var policy = new AuthorizationPolicyBuilder()
+		.RequireAuthenticatedUser()
+		.Build();
+	options.Filters.Add(new AuthorizeFilter(policy));
+})
 	.AddJsonOptions(options =>
 	{
 		options.JsonSerializerOptions.DefaultIgnoreCondition =
 			System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
-	});
+	})
+	.AddMicrosoftIdentityUI();
 
-//// ALWAYS, defaults all endpoints to have AUTHORIZE, explicit set to ALLOWANONYMOUS
-//builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-//	.AddMicrosoftIdentityWebApp(builder.Configuration);
-
-//builder.Services.AddControllersWithViews(options =>
-//{
-//	var policy = new AuthorizationPolicyBuilder()
-//		.RequireAuthenticatedUser()
-//		.Build();
-//	options.Filters.Add(new AuthorizeFilter(policy));
-//}).AddMicrosoftIdentityUI();
-
-//builder.Services.AddRazorPages()
-//	.AddMvcOptions(options =>
-//	{
-//		var policy = new AuthorizationPolicyBuilder()
-//			.RequireAuthenticatedUser()
-//			.Build();
-//		options.Filters.Add(new AuthorizeFilter(policy));
-//	})
-//	.AddMicrosoftIdentityUI();
-//// --
+builder.Services.AddRazorPages()
+	.AddMvcOptions(options =>
+	{
+		var policy = new AuthorizationPolicyBuilder()
+			.RequireAuthenticatedUser()
+			.Build();
+		options.Filters.Add(new AuthorizeFilter(policy));
+	})
+	.AddMicrosoftIdentityUI();
+// --
 
 builder.Services.AddSingleton<HostingHelpers>();
 
