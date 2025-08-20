@@ -1,0 +1,97 @@
+﻿<div class="container-fluid bg-white border-bottom">
+    <nav class="main-header navbar-light bg-white">
+        <div class="navbar container-fluid p-0">
+            <div>
+                <div class="header-logo {{LOGO_VISIBILITY}}">
+                    {{LOGO}}
+                </div>
+
+                <div class="header-nav {{HAMBURGER_MENU_VISIBILITY}}">
+                    <button class="btn btn-link p-0 me-2 d-lg-none" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                        <i class="bi bi-list fs-3"></i>
+                    </button>
+
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body p-0">
+                            <div class="accordion accordion-flush" id="mobileAccordion">
+                                {{HAMBURGER_MENU}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="d-flex justify-content-end">
+                    <div class="header-selector">
+                        <div class="dropdown dropdown-selector {{SUBCONTEXT_VISIBILITY}}">
+                            <button class="btn dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{SELECTED_SUBCONTEXT_ITEM}}
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                {{SUBCONTEXT_ITEMS}}
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="header-controls">
+                        <div class="d-flex align-items-center gap-3 justify-content-end">
+                            <div class="d-flex align-items-center gap-3">
+
+                                <div class="dropdown {{NOTIFICATION_VISIBILITY}}">
+                                    <button class="btn btn-link p-0 position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-bell fs-5"></i>
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end notification-dropdown">
+                                        {{NOTIFICATION_ITEMS}}
+                                    </div>
+                                </div>
+
+                                <div class="dropdown {{APP_DRAWER_VISIBILITY}}">
+                                    <button class="btn btn-link p-0" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                        <i class="bi bi-grid-3x3-gap fs-5"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-end app-dropdown">
+                                        <div class="d-flex justify-content-around">
+                                            {{APP_DRAWER_ITEMS}}
+                                        </div>
+                                        {{APP_DRAWER_BUTTON}}
+                                    </div>
+                                </div>
+
+                                <div class="dropdown {{PROFILE_VISIBILITY}}">
+                                    <div class="profile-circle dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{PROFILE_INITIALS}}
+                                    </div>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        {{PROFILE_ITEMS}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="sidebar-container d-flex {{SIDEBAR_VISIBILITY}}">
+            <nav class="sidebar d-none d-md-block"  >
+                <ul class="nav flex-column text-center">
+                    {{SIDEBAR_ITEMS}}
+                </ul>
+            </nav>
+            <div class="submenu-panel d-none d-md-block">
+                {{SIDEBAR_SUB_MENU_ITEMS}}
+            </div>
+        </div>
+    </nav>
+</div>

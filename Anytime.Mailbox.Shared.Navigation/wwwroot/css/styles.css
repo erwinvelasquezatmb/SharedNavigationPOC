@@ -131,6 +131,11 @@
             background: #FFF7F2;
         }
 
+        .sidebar .nav.nav-link.selected i {
+            color: #FF6400;
+            background: #FFF7F2;
+        }
+
         .sidebar .nav-item {
             cursor: pointer;
         }
@@ -151,6 +156,12 @@
     .submenu-panel.open {
         width: 200px;
     }
+
+.dropdown-selector .dropdown-item.selected {
+    font-weight: 500;
+    color: #FF6400;
+}
+
 
 /* App Dropdown */
 .app-dropdown {

@@ -12,41 +12,108 @@
     <title>Anytime Mailbox Header</title>
 </head>
 <body>
-    <header>Hello World! I'm the local header</header>
-    <div id="nav_placeholder"></div>
+    <!--<header>Hello World! I'm the local header</header>
+    <div id="nav_placeholder"></div>-->
+
+    <header id="nav_placeholder"></header>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="js/navigation-v2.js"></script>
+    <script src="js/navigation-v3.js"></script>
 
     <script>
+        //const model = {
+        //    logo: {
+        //        src: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo_AC_transparent.png",
+        //        href: "/",
+        //        text: "Anytime Central"
+        //    },
+        //    applications: {
+        //        buttonText: "My Account",
+        //        list: [
+        //            { href: "https://localhost:7231", src: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo-atmb-mailbox.png", text: "Anytime Mailbox Renter" },
+        //            { href: "https://localhost:7250", src: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo-atmb-phones.png", text: "Anytime Phone" },
+        //        ]
+        //    },
+        //    profile: {
+        //        userInitial: "TU",
+        //        menuItems: [
+        //            { href: "/", text: "My Profile" },
+        //            { href: "/", text: "Settings" },
+        //            { href: "/", text: "Logout" }
+        //        ]
+        //    }
+        //}
+
+        //const model = {
+        //    header: {
+        //        logo: {
+        //            imageUri: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo_AC_transparent.png",
+        //            targetUri: "/",
+        //            tooltip: "Anytime Customer"
+        //        }
+        //    }
+        //};
+
         const model = {
-            logo: {
-                src: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo_AC_transparent.png",
-                href: "/",
-                text: "Anytime Central"
+            header: {
+                logo: {
+                    imageUri: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo_AC_transparent.png",
+                    targetUri: "/",
+                    tooltip: "Anytime Customer"
+                },
+                subcontext: [
+                        { targetUri: "/", label: "Mailbox 1", tooltip: "Mailbox 1"},
+                        { targetUri: "/", label: "Mailbox 2", tooltip: "Mailbox 2"}
+                ],
+                appDrawer: {
+                    appItems: [
+                        { targetUri: "/", imageUri: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo-atmb-mailbox.png", tooltip: "Anytime Mailbox", label: "Anytime Mailbox" },
+                        { targetUri: "/", imageUri: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo-atmb-phones.png", tooltip: "Anytime Phone", label: "Anytime Phone" },
+                    ],
+                    actionbutton: {
+                        targetUri: "/",
+                        label: "Sample Text",
+                        tooltip: "Sample Text"
+                    }
+                },
+                profile: {
+                    firstName: "joseph",
+                    lastName: "khalaf",
+                    email: "joseph.khalaf@anytimemailbox.com",
+                    actionLinks: [
+                        { targetUri: "/", tooltip: "My Profile", label: "My Profile" },
+                        { targetUri: "/", tooltip: "Settings", label: "Settings" }
+                    ]
+                }
             },
-            applications: {
-                buttonText: "My Account",
-                list: [
-                    { href: "https://localhost:7231", src: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo-atmb-mailbox.png", text: "Anytime Mailbox Renter" },
-                    { href: "https://localhost:7250", src: "https://atp-stage-cdn.s3.ap-southeast-1.amazonaws.com/DEMOOnly/images/logo-atmb-phones.png", text: "Anytime Phone" },
-                ]
-            },
-            profile: {
-                userInitial: "TU",
-                menuItems: [
-                    { href: "/", text: "My Profile" },
-                    { href: "/", text: "Settings" },
-                    { href: "/", text: "Logout" }
-                ]
-            }
+            sideNavigation: [
+                {
+                    targetUri: "/",
+                    iconClass: "bi bi-house",
+                    label: "House",
+                    tooltip: "House",
+                    selected: true
+                },
+                {
+                    targetUri: "/",
+                    iconClass: "bi bi-envelope",
+                    label: "Envelope",
+                    tooltip: "",
+                    subMenuItems: [
+                        { targetUri: "/", label: "Test 1", tooltip: "test 1" },
+                        { targetUri: "/", label: "Test 2", tooltip: "test 2" }
+                    ]``
+                }
+            ]
         }
 
-        RenderNavigation(model);
+        ///*RenderNavigation(model, "nav_placeholder");*/
+        ///* loadNavigationBar(model, "nav_placeholder");*/
+        renderNavigationFromModel("nav_placeholder", model);
     </script>
 </body>
 </html>
